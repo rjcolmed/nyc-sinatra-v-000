@@ -1,5 +1,8 @@
 class ApplicationController < Sinatra::Base
 
-  set :views, Proc.new { File.join(root, "../views/") }
-  register Sinatra::Twitter::Bootstrap::Assets
+  configure do
+    enable :sessions
+    set :views, Proc.new { File.join(root, "../views/") }
+    register Sinatra::Twitter::Bootstrap::Assets
+  end
 end
